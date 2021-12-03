@@ -1,0 +1,23 @@
+<div class="row mt-2">
+  <div class="col-md-12">
+    <form #shoppingForm="ngForm" (ngSubmit)="onSubmit(shoppingForm)">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="itemName" name="itemName" placeholder="Enter the name" required ngModel />
+        </div>
+        <div class="col-md-3">
+          <label for="qty" class="form-label">Quantity</label>
+          <input type="number" class="form-control" id="qty" name="qty" placeholder="Enter the quantity" required ngModel />
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-success me-2" [disabled]="!shoppingForm.valid">{{addButtonCaption}}</button>
+          <button type="button" class="btn btn-danger me-2" (click)="onItemDelete()">Delete</button>
+          <button type="button" class="btn btn-secondary" (click)="onItemReset(shoppingForm)">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

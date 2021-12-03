@@ -1,0 +1,42 @@
+<div class="row" *ngIf="recipeId > 0">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12 h2">
+        {{selectedRecipeVal.name}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        {{selectedRecipeVal.description}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <img src="{{selectedRecipeVal.imagePath}}" alt="recipe.name" class="img-fluid" style="height:400px;width:300px;" />
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-12 list-group">
+        <ul>
+          <li *ngFor="let item of selectedRecipeVal.ingredients" class="list-group-item">
+            {{item.name}} - {{item.quantity}}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" (click)="AddShoppingList(selectedRecipeVal.ingredients)">To Shopping List</a></li>
+            <li><a class="dropdown-item" (click)="EditRecipe(selectedRecipeVal.id)">Edit</a></li>
+            <li><a class="dropdown-item" (click)="DeleteRecipe(selectedRecipeVal.id)">Delete</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
