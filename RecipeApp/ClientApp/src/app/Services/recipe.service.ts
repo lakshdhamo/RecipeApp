@@ -17,6 +17,7 @@ export class RecipeService implements OnInit {
 
   }
 
+    // Master data
   private recipes: Recipe[] = [
     new Recipe("A Test Recipe1",
       "This is a simple test 1",
